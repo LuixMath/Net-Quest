@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <meta name="theme-color" content="#0b0b10" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="NetQuest" />
+  <meta name="description" content="App de estudos de Redes de Computadores I com quizzes, progresso e dungeon." />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>NetQuest — Redes I</title>
+</head>
+<body>
+  <div id="app-shell">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+    <div class="ambient ambient-c"></div>
+
+    <header class="topbar">
+      <button class="brand" data-nav="home" aria-label="Início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 44 44"><path d="M11 27.5 20.5 12l12 5.5-2 13-12 2.5Z"/><circle cx="20.5" cy="12" r="3.5"/><circle cx="32.5" cy="17.5" r="3.5"/><circle cx="30.5" cy="30.5" r="3.5"/><circle cx="11" cy="27.5" r="3.5"/></svg>
+        </span>
+        <span><strong>NetQuest</strong><small>DCO3002 · Lista 1</small></span>
+      </button>
+      <div class="topbar-actions">
+        <button id="install-btn" class="pill-button compact" title="Instalar como app">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 15v4h14v-4"/></svg>
+          <span>Instalar</span>
+        </button>
+        <button id="profile-btn" class="avatar-button" title="Progresso"><span id="profile-level">1</span></button>
+      </div>
+    </header>
+
+    <main id="view" tabindex="-1"></main>
+
+    <nav class="tabbar" aria-label="Navegação principal">
+      <button class="tab active" data-nav="home">
+        <svg viewBox="0 0 24 24"><path d="M3.5 10.5 12 3l8.5 7.5V21h-5.5v-6h-6v6H3.5Z"/></svg>
+        <span>Início</span>
+      </button>
+      <button class="tab" data-nav="blocks">
+        <svg viewBox="0 0 24 24"><path d="M4 5h7v7H4Zm9 0h7v7h-7ZM4 14h7v6H4Zm9 0h7v6h-7Z"/></svg>
+        <span>Blocos</span>
+      </button>
+      <button class="tab" data-nav="dungeon">
+        <svg viewBox="0 0 24 24"><path d="M5 21V8l3-3v3l4-5 4 5V5l3 3v13Zm4-8h6v8H9Z"/></svg>
+        <span>Dungeon</span>
+      </button>
+      <button class="tab" data-nav="library">
+        <svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3Zm3 0v16"/></svg>
+        <span>Biblioteca</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="modal-root" aria-live="polite"></div>
+  <div id="toast-root" aria-live="polite"></div>
+
+  <script src="./data/questions.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
